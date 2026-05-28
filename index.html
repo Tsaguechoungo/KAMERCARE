@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KamerCare – Advanced Hygiene Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;4
+00;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<!--  NAVBAR  -->
+<header id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="#home" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="21" stroke="#2d8a4e" stroke-width="2"/>
+          <path d="M14 22 C14 16, 22 10, 30 16 C26 18, 24 20, 22 26 C20 20, 18 18, 14 22Z" fill="#2d8a4e"/>
+          <path d="M22 26 C22 30, 18 34, 14 32" stroke="#2d8a4e" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 26 C22 30, 26 34, 30 32" stroke="#5db87a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-kamer">Kamer</span><span class="logo-care">Care</span>
+        <sup class="logo-reg">®</sup>
+        <small class="logo-tagline">Pure Science. Pure Care.</small>
+      </div>
+    </a>
+    <!-- Search Bar -->
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off"/>
+      <button class="search-btn" onclick="doSearch()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11"
+r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div id="searchDropdown" class="search-dropdown hidden"></div>
+    </div>
+    <!-- Nav Links -->
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#products" onclick="toggleMenu()">Products</a>
+ <a href="#why-us" onclick="toggleMenu()">Why Us</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</header>
+<!--  HERO SLIDER  -->
+<section id="home" class="hero-slider">
+  <div class="slides-container" id="slidesContainer">
+    <div class="slide active" style="background-image: url('tooth.png');">
+      <div class="slide-img-bg"
+style="background-image:none"></div>
+      <div class="slide-content">
+        <span class="slide-tag">Advanced Oral Hygiene</span>
+        <h2>KamerCare Toothpaste</h2>
+        <p>120g · Fluoride-fortified formula that eliminates bacteria at the root. Your smile deserves science.</p>
+        <a href="#toothpaste" class="slide-btn">Discover Product</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('hand.png');">
+      <div class="slide-img-bg"
+style="background-image:none"></div>
+      <div class="slide-content">
+        <span class="slide-tag">Germ Protection</span>
+        <h2>Hand Sanitizer</h2>
+        <p>250ml · WHO-grade 75% alcohol formula. Kills 99.9% of germs in seconds—no water needed.</p>
+        <a href="#sanitizer" class="slide-btn">Discover Product</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('soap.png');">
+      <div class="slide-img-bg"
+style="background-image:none"></div>
+      <div class="slide-content">
+        <span class="slide-tag">Dermatologically Tested</span>
+        <h2>Medicated Soap</h2>
+        <p>250ml · pH-balanced formula that cleanses deeply while preserving your skin's natural barrier.</p>
+        <a href="#soap" class="slide-btn">Discover Product</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('cream.png');">
+      <div class="slide-img-bg"
+style="background-image:none"></div>
+      <div class="slide-content">
+        <span class="slide-tag">Daily Skin Nutrition</span>
+        <h2>Daily Skin Cream</h2>
+        <p>250ml · Deep hydration formula enriched with natural extracts. Healthy, radiant skin every day.</p>
+        <a href="#cream" class="slide-btn">Discover Product</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('powder.png');">
+      <div class="slide-img-bg"
+style="background-image:none"></div>
+      <div class="slide-content">
+        <span class="slide-tag">All-Day Freshness</span>
+        <h2>Hygiene Powder</h2>
+        <p>150ml · Lightweight formula that absorbs moisture and keeps you fresh and confident all day long.</p>
+        <a href="#powder" class="slide-btn">Discover Product</a>
+      </div>
+    </div>
+</div>
+ <!-- Arrows -->
+  <button class="slider-arrow left" onclick="changeSlide(-1)">&#8249;</button>
+  <button class="slider-arrow right" onclick="changeSlide(1)">&#8250;</button>
+  <!-- Dots -->
+  <div class="slider-dots" id="sliderDots"></div>
+  <!-- Slide counter -->
+  <div class="slide-counter" id="slideCounter">1 / 5</div>
+</section>
+<!--  PRODUCTS SECTION  -->
+<section id="products" class="section products-section">
+  <div class="section-header">
+    <span class="section-eyebrow">Our Range</span>
+    <h2 class="section-title">KamerCare Products</h2>
+    <p class="section-sub">Scientifically formulated. Clinically tested. Made for everyday life.</p>
+  </div>
+  <div class="products-grid">
+    <!-- TOOTHPASTE -->
+    <div class="product-card" id="toothpaste">
+      <div class="product-img-wrap">
+        <img src="IMG-20260423-WA0008.jpg" alt="KamerCare Toothpaste"
+onerror="this.style.background='linear-gradient(135deg,#e8f5e9,#c8e6c9)';this.alt='KamerCare Toothpaste'"/>
+        <div class="product-badge">120g</div>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Oral Hygiene</span>
+        <h3>Advanced Toothpaste</h3>
+        <p class="product-desc">Our fluoride-enriched toothpaste targets harmful oral bacteria while strengthening
+enamel. Formulated with natural mint extracts for long-lasting freshness and complete oral protection.</p>
+        <div class="product-benefits">
+          <div class="benefit"><span class="benefit-icon"> </span> Kills 99.9% oral bacteria</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Enamel strengthening formula</div>
+          <div class="benefit"><span class="benefit-icon"> </span> All-day fresh breath</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Gentle for sensitive gums</div>
+        </div>
+        <div class="product-use-case">
+          <strong>Best for:</strong> Daily brushing morning & night. Ideal for people prone to cavities, gum
+disease, or bad breath.
+        </div>
+        <a href="#contact" class="product-btn">Order Now</a>
+      </div>
+    </div>
+    <!-- HAND SANITIZER -->
+    <div class="product-card" id="sanitizer">
+      <div class="product-img-wrap">
+        <img src="IMG-20260423-WA0006.jpg" alt="KamerCare Hand Sanitizer"
+onerror="this.style.background='linear-gradient(135deg,#e3f2fd,#bbdefb)';this.alt='Hand Sanitizer'"/>
+        <div class="product-badge">250ml</div>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Hand Hygiene</span>
+        <h3>Hand Sanitizer</h3>
+        <p class="product-desc">WHO-grade formula with 75% alcohol content providing rapid, effective protection
+against viruses, bacteria, and fungi. Enriched with moisturizers so your hands stay soft even with frequent
+use.</p>
+        <div class="product-benefits">
+          <div class="benefit"><span class="benefit-icon"> </span> 75% alcohol – WHO grade</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Kills bacteria & viruses fast</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Non-sticky, quick-dry</div>
+            <div class="benefit"><span class="benefit-icon"> </span> Moisturizing formula</div>
+        </div>
+        <div class="product-use-case">
+          <strong>Best for:</strong> Healthcare workers, school children, offices, restaurants, travel, and anyone
+wanting instant hand protection without water.
+        </div>
+        <a href="#contact" class="product-btn">Order Now</a>
+      </div>
+    </div>
+    <!-- MEDICATED SOAP -->
+    <div class="product-card" id="soap">
+      <div class="product-img-wrap">
+        <img src="IMG-20260423-WA0005.jpg" alt="KamerCare Medicated Soap"
+onerror="this.style.background='linear-gradient(135deg,#fff8e1,#ffecb3)';this.alt='Medicated Soap'"/>
+        <div class="product-badge">250g</div>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Skin Cleansing</span>
+        <h3>Medicated Soap</h3>
+        <p class="product-desc">pH-balanced medicated bar soap designed to cleanse and protect. Contains active
+antimicrobial agents to fight skin infections while maintaining your skin's natural moisture balance. Safe for
+daily use by the whole family.</p>
+        <div class="product-benefits">
+          <div class="benefit"><span class="benefit-icon"> </span> pH-balanced for all skin types</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Fights skin infections</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Dermatologically tested</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Family-safe formula</div>
+        </div>
+        <div class="product-use-case">
+          <strong>Best for:</strong> People with acne-prone skin, eczema, fungal infections, or anyone who wants
+medical-grade cleansing at home.
+        </div>
+        <a href="#contact" class="product-btn">Order Now</a>
+      </div>
+    </div>
+    <!-- DAILY SKIN CREAM -->
+    <div class="product-card" id="cream">
+      <div class="product-img-wrap">
+        <img src="IMG-20260423-WA0004.jpg" alt="KamerCare Daily Skin Cream"
+onerror="this.style.background='linear-gradient(135deg,#fce4ec,#f8bbd0)';this.alt='Daily Skin Cream'"/>
+        <div class="product-badge">250ml</div>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Skin Care</span>
+        <h3>Daily Skin Cream</h3>
+        <p class="product-desc">Lightweight, fast-absorbing moisturizing cream that locks in hydration for up to 24
+hours. Enriched with natural botanical extracts to nourish, brighten, and protect your skin from environmental
+stress.</p>
+        <div class="product-benefits">
+          <div class="benefit"><span class="benefit-icon"> </span> 24-hour deep hydration</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Natural botanical extracts</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Non-greasy, fast absorbing</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Brightens & evens skin tone</div>
+        </div>
+        <div class="product-use-case">
+          <strong>Best for:</strong> Dry, dull, or aging skin. Perfect for morning and evening routines. Suitable
+for all skin tones.
+        </div>
+        <a href="#contact" class="product-btn">Order Now</a>
+      </div>
+    </div>
+    <!-- HYGIENE POWDER -->
+      <div class="product-card" id="powder">
+      <div class="product-img-wrap">
+        <img src="IMG-20260423-WA0003.jpg" alt="KamerCare Hygiene Powder"
+onerror="this.style.background='linear-gradient(135deg,#e8f5e9,#a5d6a7)';this.alt='Hygiene Powder'"/>
+        <div class="product-badge">150ml</div>
+      </div>
+      <div class="product-body">
+        <span class="product-cat">Body Hygiene</span>
+        <h3>Hygiene Powder</h3>
+        <p class="product-desc">Ultra-fine talc-free powder that absorbs excess moisture and prevents skin chafing.
+Its advanced freshness complex keeps you odor-free and comfortable from morning to night — perfect for tropical
+climates.</p>
+        <div class="product-benefits">
+          <div class="benefit"><span class="benefit-icon"> </span> Talc-free, skin-safe formula</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Superior moisture absorption</div>
+          <div class="benefit"><span class="benefit-icon"> </span> All-day odor protection</div>
+          <div class="benefit"><span class="benefit-icon"> </span> Prevents skin chafing</div>
+        </div>
+        <div class="product-use-case">
+          <strong>Best for:</strong> Active individuals, hot/humid climates, babies, post-workout care, and anyone
+who wants all-day freshness confidence.
+        </div>
+        <a href="#contact" class="product-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  CONDITIONS SECTION  -->
+<section class="section conditions-section">
+  <div class="section-header">
+    <span class="section-eyebrow">Product Guidance</span>
+    <h2 class="section-title">When to Use KamerCare</h2>
+    <p class="section-sub">Our products are specifically formulated for real-life hygiene challenges.</p>
+  </div>
+  <div class="conditions-grid">
+    <div class="condition-card">
+      <div class="condition-icon"> </div>
+      <h4>Oral Infections & Bad Breath</h4>
+      <p>KamerCare Toothpaste contains active fluoride and antimicrobial agents that target cavity-causing
+bacteria, fight plaque buildup, and neutralize the sulfur compounds responsible for bad breath.</p>
+      <span class="condition-product">→ Use: Advanced Toothpaste</span>
+    </div>
+    <div class="condition-card">
+      <div class="condition-icon"> </div>
+      <h4>Germ Exposure & Virus Risk</h4>
+      <p>After touching shared surfaces, public transport, or during flu season, our WHO-grade Hand Sanitizer
+eliminates harmful pathogens in under 30 seconds — no rinsing required.</p>
+      <span class="condition-product">→ Use: Hand Sanitizer</span>
+    </div>
+    <div class="condition-card">
+      <div class="condition-icon"> </div>
+      <h4>Skin Infections & Acne</h4>
+      <p>KamerCare Medicated Soap's active antimicrobial compounds penetrate deep into pores to fight bacterial and
+fungal skin infections while its pH-balanced formula prevents irritation.</p>
+      <span class="condition-product">→ Use: Medicated Soap</span>
+    </div>
+    <div class="condition-card">
+      <div class="condition-icon"> </div>
+      <h4>Dry & Dehydrated Skin</h4>
+      <p>Environmental exposure, air conditioning, and aging all deplete skin moisture. Our Daily Skin Cream's deep
+hydration formula restores the skin barrier and locks moisture in for 24 hours.</p>
+      <span class="condition-product">→ Use: Daily Skin Cream</span>
+      </div>
+        <div class="condition-card">
+      <div class="condition-icon"> </div>
+      <h4>Sweat & Body Odor</h4>
+      <p>In hot, humid conditions, sweat and bacterial growth cause discomfort and odor. KamerCare Hygiene Powder's
+absorbent formula manages moisture instantly, keeping you fresh and chafe-free.</p>
+      <span class="condition-product">→ Use: Hygiene Powder</span>
+    </div>
+    <div class="condition-card">
+      <div class="condition-icon"> </div>
+      <h4>Family & Children's Hygiene</h4>
+      <p>All KamerCare products are dermatologically tested and gentle enough for daily family use. Our formulas
+are free from harsh chemicals that irritate children's sensitive skin.</p>
+      <span class="condition-product">→ Use: Full KamerCare Range</span>
+    </div>
+  </div>
+</section>
+<!--  WHY US  -->
+<section id="why-us" class="section why-section">
+  <div class="why-inner">
+    <div class="why-text">
+      <span class="section-eyebrow">Why KamerCare</span>
+      <h2 class="section-title">Science You Can Trust</h2>
+      <p>We are a Cameroonian hygiene company committed to making world-class personal care products accessible to
+every household. Our formulas are developed by certified scientists and tested to international standards.</p>
+      <div class="why-stats">
+        <div class="stat"><strong>5+</strong><small>Products</small></div>
+        <div class="stat"><strong>99.9%</strong><small>Germ Kill Rate</small></div>
+        <div class="stat"><strong>100%</strong><small>Tested & Certified</small></div>
+      </div>
+    </div>
+    <div class="why-features">
+      <div class="feature-item">
+        <div class="feature-num">01</div>
+        <div>
+          <h4>Lab-Certified Formulas</h4>
+          <p>Every KamerCare product is developed in a certified laboratory and tested against international
+hygiene and dermatology standards before reaching you.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">02</div>
+        <div>
+          <h4>Made for African Climates</h4>
+          <p>Our products are specially formulated for tropical climates — high humidity, heat, and intense sun
+exposure — giving you protection that actually works where you live.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">03</div>
+        <div>
+          <h4>Safe for Whole Family</h4>
+          <p>Dermatologically tested and free from harmful chemicals. Safe for adults, teenagers, and children aged
+3 and above.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">04</div>
+        <div>
+          <h4>Affordable Excellence</h4>
+          <p>Premium hygiene should not be a luxury. KamerCare delivers clinic-grade quality at prices every
+Cameroonian household can access.</p>
+        </div>
+      </div>
+    </div>
+      </div>
+</section>
+<!--  CONTACT  -->
+<section id="contact" class="section contact-section">
+  <div class="contact-inner">
+    <div class="contact-logo-area">
+      <div class="contact-logo">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="28" stroke="#2d8a4e" stroke-width="2.5"/>
+          <path d="M18 30 C18 20, 30 12, 42 20 C36 23, 32 26, 30 34 C28 26, 24 23, 18 30Z" fill="#2d8a4e"/>
+          <path d="M30 34 C30 40, 24 46, 18 44" stroke="#2d8a4e" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M30 34 C30 40, 36 46, 42 44" stroke="#5db87a" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <p class="contact-brand"><span>Kamer</span>Care<sup>®</sup></p>
+          <small>Pure Science. Pure Care.</small>
+        </div>
+      </div>
+      <p class="contact-intro">Have questions about our products or want to place a bulk order? Reach out to us —
+we respond within 24 hours.</p>
+    </div>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon"> </div>
+        <h4>Call / WhatsApp</h4>
+        <a href="tel:+237693747863">+237 693 747 863</a>
+        <p>Available Mon–Sat, 8am–6pm</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon"> </div>
+        <h4>Email Us</h4>
+        <a href="mailto:tsaguechoungo237@gmail.com">tsaguechoungo237@gmail.com</a>
+        <p>We reply within 24 hours</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon"> </div>
+        <h4>Location</h4>
+        <p>Cameroon</p>
+        <p>Serving all regions</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  FOOTER  -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <circle cx="22" cy="22" r="21" stroke="#5db87a" stroke-width="2"/>
+        <path d="M14 22 C14 16, 22 10, 30 16 C26 18, 24 20, 22 26 C20 20, 18 18, 14 22Z" fill="#5db87a"/>
+        <path d="M22 26 C22 30, 18 34, 14 32" stroke="#5db87a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22 26 C22 30, 26 34, 30 32" stroke="#7ecfa0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span><b>Kamer</b>Care<sup>®</sup></span>
+    </div>
+    <p>© 2026 KamerCare. All rights reserved. Made in Cameroon with science and care.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
